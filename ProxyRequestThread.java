@@ -29,8 +29,7 @@ public class ProxyRequestThread extends Thread {
             String serverName = getServerName(request);
             //InetAddress address = getHostName(serverName);
             //System.out.println(address);
-            //modifying message as necessary
-            //request = convertToRelativeURL(request, getServerName(request));
+            //InetAddress hostname = getHostName(serverName);
 
 
             server = new Socket(serverName, 80);
@@ -64,50 +63,9 @@ public class ProxyRequestThread extends Thread {
         return serverName;
     }
 
-  /*
-   private InetAddress getHostName(String serverName){
-   if (cache.containsKey(serverName)) {
-   InetAddress hostname = cache.get(serverName);
-   return hostname;
-   }
-   else {
-   try {
-   InetAddress hostname = InetAddress.getByName(serverName);
-   cache.put(serverName, server.getInetAddress());
-   startTimer timeout = new startTimer(serverName);
-   timeout.start();
-   System.out.println(server.getInetAddress() + "cached");
-   return hostname;
-   }
-   catch (UnknownHostException e){
-   e.printStackTrace();
-   }
-   }
-   return null;
-   }
 
-   private static class startTimer extends Thread {
-   String serverName;
-   final int time = 30000;
 
-   public startTimer(String serverName) {
-   this.serverName = serverName;
-   }
 
-   // Remove the cached host name and address after 30 seconds.
-   public void run() {
-   try {
-   Thread.sleep(time);
-   }
-   catch (InterruptedException e) {
-   System.err.println("Reuse of resolution has been Interrupted");
-   }
-   finally {
-   cache.remove(serverName);
-   }
-   }
-   }
-   */
 
 
     //shoutout to https://stackoverflow.com/questions/18571223/how-to-convert-java-string-into-byte
@@ -119,14 +77,6 @@ public class ProxyRequestThread extends Thread {
         //back to bytes
         return output.getBytes(StandardCharsets.UTF_8);
     }
-  /*
-   private byte[] convertToRelativeURL(byte[] message, String serverName){
-   //convert from byte to String
-   String output = new String(message, StandardCharsets.UTF_8);
-   output = output.replaceAll(serverName, "");
-   return output.getBytes(StandardCharsets.UTF_8);
-   }
 
 
-   */
 }
