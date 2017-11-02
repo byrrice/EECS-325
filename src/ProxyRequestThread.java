@@ -51,7 +51,8 @@ public class ProxyRequestThread extends Thread {
                     proxyd.cache.put(hostName, new DNSCacheTableEntry(hostAddress));
                     server = new Socket(hostName, 80);
                 }
-            } else {
+            }
+            else {
                 //it was never in the cache, so put it in
                 hostAddress = InetAddress.getByName(hostName);
                 proxyd.cache.put(hostName, new DNSCacheTableEntry(hostAddress));
@@ -65,7 +66,8 @@ public class ProxyRequestThread extends Thread {
 
             // Send response from server to client
             (new Thread(new ProxyResponseThread(server, client))).start();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
