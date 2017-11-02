@@ -1,5 +1,5 @@
 README FOR P1
-Author: Isaac Ng
+Author: Isaac Ng, ikn3
 
 a) I am student 5030, so I used a default port of 5030.
 b) Compile it by using javac proxyd.java in the “home_directory/project1/src” directory 
