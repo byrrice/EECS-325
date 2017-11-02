@@ -14,7 +14,7 @@ public class DNSCacheTableEntry {
     }
 
     //get the hostName you stored
-    public InetAddress getHostName() {
+    public InetAddress getHostAddress() {
         return hostAddress;
     }
 
