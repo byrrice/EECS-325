@@ -3,7 +3,7 @@ Author: Isaac Ng
 
 a) I am student 5030, so I used a default port of 5030.
 b) Compile it by using javac proxyd.java in the “home_directory/project1/src” directory 
-   and then executing the command “java proxyd –port 5030. Then, visit various websites and 
+   and then executing the command “java proxyd –port 5030". Then, visit various websites and 
    watch my proxy spit out errors and try to load various images/text.
 c) I used Google Chrome to test this.
    For future reference (Windows 10):
