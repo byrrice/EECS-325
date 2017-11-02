@@ -32,19 +32,20 @@ public class ProxyRequestThread extends Thread {
             InetAddress hostAddress;
             DNSCacheTableEntry cacheEntry;
 
-
+            //does the hashmap contain the hostName?
             if (proxyd.cache.containsKey(hostName)){
 
-                //check if entry is more than 30 seconds old
+                //check if entry is more than 30 seconds old if it does contain the hostName
                 if ((cacheEntry = proxyd.cache.get(hostName)).getTime() < 30){
 
-                    //If it is less, take the address and return that you have found it
-                    hostAddress = cacheEntry.getHostName();
-                    System.out.println("Cache hit: " + hostName);
-                    server = new Socket(hostAddress, 80);
+                    //If it hasn't expired/timedout, take the address and return that you have found it
+                    hostAddress = cacheEntry.getHostAddress();
+                    String finalHostAddress = hostAddress.getHostAddress();
+                    System.out.println("Cache hit: " + hostAddress);
+                    server = new Socket(finalHostAddress, 80);
                 }
                 else{
-                    //It expired, so get the address and remove the old entry
+                    //It expired, so remove it and add a new entry for it
                     hostAddress = InetAddress.getByName(hostName);
                     proxyd.cache.remove(hostName);
                     proxyd.cache.put(hostName, new DNSCacheTableEntry(hostAddress));
