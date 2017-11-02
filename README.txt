@@ -2,9 +2,20 @@ README FOR P1
 Author: Isaac Ng, ikn3
 
 a) I am student 5030, so I used a default port of 5030.
-b) Compile it by using javac proxyd.java in the “home_directory/project1/src” directory 
-   and then executing the command “java proxyd –port 5030". Then, visit various websites and 
-   watch my proxy spit out errors and try to load various images/text.
+b) Add to linux server:
+   COMMAND LINE
+    1. psftp ikn3@eecslinab1.engineering.cwru.edu
+    2. mkdir project1
+    3. mkdir src
+    4. put LOCATION ADDRESS OF FILES
+    5. Type ls to check if the above files are in there
+    6. rm FILENAME if you need to remove
+   PUTTY
+    1. Enter Server Name
+    2. cd project1
+    3. cd src
+    4. javac proxyd.java
+    5. java proxyd -port 5030
 c) I used Google Chrome to test this.
    For future reference (Windows 10):
     1. Chrome, Settings, Advanced, Proxy
