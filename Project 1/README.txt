@@ -25,3 +25,9 @@ c) I used Google Chrome to test this.
 d) Tested on teamfortress.tv, 4chan.org, cnn.com, case.edu, cluster41.case.edu
 e) I get errors like Unknown Host Exception which is due to the hostName sometimes 
    being wrong. It still loads the requisite websites though. 
+   
+   GRADE: 88/80
+   "-2; your proxy throws a lot of socket exceptions
+   -5; byte / string conversion needs to be done in ascii, not UTF-8
+   -5; you do not seem to change the request host to be relative
+   +20; dns caching looks good"
