@@ -40,3 +40,10 @@ google.com (google write traceroute python)
 https://blogs.oracle.com/ksplice/learning-by-doing:-writing-your-own-traceroute-in-8-easy-steps
 https://pypi.python.org/pypi/geoip2
 https://stackoverflow.com/questions/4913349/haversine-formula-in-python-bearing-and-distance-between-two-gps-points
+
+
+Grade:
+95/80
+Calculation of remaining bytes in the datagram partially wrong. -5
+Geographic part +15;
+Report on geographic part +5.
